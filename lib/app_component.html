@@ -1,0 +1,22 @@
+<section>
+  <h1>Elezioni del Direttivo</h1>
+    <div>
+      <input type="text" class="" name="name" id="name" placeholder="Nome Candidato">
+      <input type="text" name="surname" id="surname" placeholder="Cognome Candidato">
+      <button type="button" (click)="addCandidate()">Aggiungi Candidato</button>
+      <button type="button" (click)="clearCandidateList()">Cancella Candidati</button>
+      <button type="button" (click)="selectElected()">Eleggi</button>
+    </div>
+    <div>
+      <h2>Candidati:</h2>
+      <ul>
+        <li *ngFor="let c of candidates; let i = index">
+          <button type="button" id="removeCand" (click)="removeCandidate(c.name, c.surname)">Rimuovi</button>
+          <span class="entry">{{i + 1}} -> {{c}}</span>
+          <button type="button" id="voteUp" (click)="c.incVotes()">+</button>
+          <button type="button" id="voteDown" (click)="c.decVotes()">-</button>
+        </li>
+      </ul>
+    </div>
+
+</section>
