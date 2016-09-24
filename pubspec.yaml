@@ -1,6 +1,6 @@
 name: ElezioniDirettivo
 description: A Dart app used to manage directive election at Trento CUS
-version: 0.0.1
+version: 0.1.0
 environment:
   sdk: '>=1.19.0 <2.0.0'
 dependencies:
