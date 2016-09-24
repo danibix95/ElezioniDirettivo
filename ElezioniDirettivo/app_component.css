@@ -1,0 +1,9 @@
+:host {
+
+}
+.entry {
+  font-size: 2em;
+}
+.cand-name {
+  text-transform: capitalize;
+}
