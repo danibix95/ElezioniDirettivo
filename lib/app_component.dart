@@ -14,8 +14,8 @@ import 'package:angular2/core.dart';
     directives: const [CORE_DIRECTIVES, FORM_DIRECTIVES]
 )
 class AppComponent {
-  String iName;
-  String iSurname;
+  String iName = "";
+  String iSurname = "";
   List<Candidate> candidates = new List();
 
   /// Add new candidate to candidates list

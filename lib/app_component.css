@@ -1,9 +1,27 @@
 :host {
 
 }
+h1 {
+  font-size: 4em;
+}
 .entry {
   font-size: 2em;
 }
+.taskBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-around;
+}
+.tsb-row {
+  flex-basis: 100%;
+}
+#candidatesList {
+  list-style: none;
+}
 .cand-name {
   text-transform: capitalize;
+}
+.container {
+  text-align: center;
 }

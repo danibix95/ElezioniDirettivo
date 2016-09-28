@@ -1,11 +1,15 @@
-<section>
-  <h1>Elezioni del Direttivo</h1>
-    <div>
-      <input type="text" class="" name="name" id="name" placeholder="Nome Candidato" autofocus [(ngModel)]="iName">
-      <input type="text" name="surname" id="surname" placeholder="Cognome Candidato" [(ngModel)]="iSurname">
-      <button type="button" (click)="addCandidate()">Aggiungi Candidato</button>
-      <button type="button" (click)="clearCandidateList()">Cancella Candidati</button>
-      <button type="button" (click)="selectElected()">Eleggi</button>
+<section class="container">
+  <h1>Elezioni Direttivo del CUS di Trento</h1>
+    <div class="taskBar">
+      <div class="tsb-row">
+        <input type="text" class="iField" name="name" id="name" placeholder="Nome Candidato" autofocus [(ngModel)]="iName">
+        <input type="text" class="iField" name="surname" id="surname" placeholder="Cognome Candidato" [(ngModel)]="iSurname">
+      </div>
+      <div class="tsb-row">
+        <button type="button" class="btn" (click)="addCandidate()">Aggiungi Candidato</button>
+        <button type="button" class="btn" (click)="clearCandidateList()">Cancella Candidati</button>
+        <button type="button" class="btn" (click)="selectElected()">Eleggi</button>
+      </div>
     </div>
     <div>
       <h2>Candidati:</h2>
