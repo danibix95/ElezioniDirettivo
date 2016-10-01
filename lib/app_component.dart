@@ -18,7 +18,7 @@ class AppComponent {
   String iSurname = "";
   List<Candidate> candidates = new List();
 
-  /// Add new candidate to candidates list
+  /// Add new candidate to candidates list.
   void addCandidate() {
     if (iName != "" && iSurname != "") {
       candidates.add(new Candidate(iName, iSurname));
@@ -35,28 +35,44 @@ class AppComponent {
     }
   }
 
-  // Remove selected candidate
+  // Remove selected candidate.
   void removeCandidate(String name, String surname) {
     candidates.removeWhere((c) => c.name == name && c.surname == surname);
     saveCandidates();
   }
 
-  /// Remove all candidates from current list
+  /// Remove all candidates from current list.
   void clearCandidateList() {
     candidates.clear();
     // clear windows storage
     window.localStorage.clear();
   }
 
-  /// Rearrange list according to most voted candidate
+  /// Rearrange list according to most voted candidate.
   void selectElected() {
     candidates.sort((a, b) => -a.votes.compareTo(b.votes));
     saveCandidates();
   }
 
-  /// Save candidates list on browser local storage
+  /// Save candidates list on browser local storage.
   void saveCandidates() {
     window.localStorage['candidates'] = JSON.encode(candidates);
+  }
+
+  /// Handle UI input element behaviour when it's value contains something or not.
+  void checkInputContent(event) {
+    if(event.target.value.trim() != "") {
+      event.target.parent.classes.add('input--filled');
+    }
+    else {
+      // clear any possible space
+      event.target.value = "";
+      event.target.parent.classes.remove('input--filled');
+    }
+  }
+
+  void enterAdd(event) {
+    if (event.keyCode == 13) addCandidate();
   }
 
   /// Build app component
@@ -73,26 +89,26 @@ class AppComponent {
 }
 /// A Candidate is representation of person who the meeting has to choose as leader.
 class Candidate {
-  /// The name of this candidate
+  /// The name of this candidate.
   String name;
-  /// The surname of this candidate
+  /// The surname of this candidate.
   String surname;
-  /// The number of votes this candidate had received
+  /// The number of votes this candidate had received.
   int votes;
 
-  /// increase candidate's votes
+  /// Increase candidate's votes.
   void incVotes() {
     votes++;
   }
 
-  /// decrease candidate's votes if they are great than 0
+  /// Decrease candidate's votes if they are great than 0
   void decVotes() {
     if (votes > 0) votes--;
   }
 
   String toString() => "$name $surname";
 
-  /// convert Candidate object to Map object representing it as JSON
+  /// Convert Candidate object into Map object that represent it as JSON
   Map toJson() => { "name" : name, "surname" : surname, "votes" : votes };
 
   /// Generate a candidate with a name, surname and 0 votes by defaults
