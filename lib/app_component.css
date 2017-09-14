@@ -6,8 +6,14 @@ h1 {
   margin-bottom: 0.5em;
   -webkit-margin-after: 0.2em;
 }
+.rank, .votes {
+  font-size: 2em !important;
+  padding: 0 1.2em;
+}
 .entry {
-  font-size: 2em;
+  font-size: 3em;
+  text-transform: capitalize;
+  font-weight: 300;
 }
 .taskBar {
   display: flex;
@@ -225,10 +231,90 @@ h1 {
 }
 #candidatesList {
   list-style: none;
-}
-.cand-name {
-  text-transform: capitalize;
+  padding-bottom: 1.5em;
+  margin: 0 auto;
 }
 .container {
   text-align: center;
 }
+.removeCand {
+  margin: 0.2rem 0.5rem;
+  padding: 0.8rem;
+  min-width: 128px;
+  color: cornsilk;
+  background-color: transparent;
+  border: 1px solid cornsilk;
+  font-size: 1.2rem;
+  cursor: pointer;
+  /*border-radius: 4px;*/
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.removeCand:hover,
+.removeCand:focus {
+  color: #3E2723;
+  background-color: cornsilk;
+}
+.removeCand:active {
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  -ms-transition: all 0s;
+  -o-transition: all 0s;
+  transition: all 0s;
+  border-color: bisque;
+  background-color: bisque;
+  box-shadow: 0 0 21px -4px #000000;
+}
+
+.voteUp,
+.voteDown {
+  margin: 0.2rem 0.5rem;
+  padding: 0.8rem;
+  min-width: 64px;
+  background-color: transparent;
+  font-size: 1.8rem;
+  cursor: pointer;
+  /*border-radius: 4px;*/
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.voteUp {
+  color: palegreen;
+  border: 1px solid palegreen;
+}
+.voteDown {
+  color: orangered;
+  border: 1px solid orangered;
+}
+.voteUp:hover, .voteUp:focus {
+  color: #3E2723;
+  background-color: palegreen;
+}
+.voteDown:hover, .voteDown:focus {
+  color: #3E2723;
+  background-color: orangered;
+}
+.voteUp:active, .voteDown:active {
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  -ms-transition: all 0s;
+  -o-transition: all 0s;
+  transition: all 0s;
+}
+.voteUp:active {
+  border-color: limegreen;
+  background-color: limegreen;
+  box-shadow: 0 0 21px -4px #000000;
+}
+.voteDown:active {
+  border-color: red;
+  background-color: red;
+  box-shadow: 0 0 21px -4px #000000;
+}
+

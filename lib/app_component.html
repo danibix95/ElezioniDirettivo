@@ -28,15 +28,24 @@
       </div>
     </div>
     <div>
-      <h2>Candidati:</h2>
-      <ul id="candidatesList">
-        <li *ngFor="let c of candidates; let i = index">
-          <button type="button" id="removeCand" (click)="removeCandidate(c.name, c.surname)">Rimuovi</button>
-          <span class="entry">Candidato {{i + 1}} &#10142; <strong class="cand-name">{{c}}</strong> - Voti: {{c.votes}}</span>
-          <button type="button" id="voteUp" (click)="c.incVotes(); saveCandidates()">+</button>
-          <button type="button" id="voteDown" (click)="c.decVotes(); saveCandidates()">-</button>
-        </li>
-      </ul>
+      <table id="candidatesList">
+        <tr class="header">
+          <td></td>
+          <td><h2>Rank</h2></td>
+          <td><h2>Candidati</h2></td>
+          <td><h2>Voti</h2></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr *ngFor="let c of candidates; let i = index">
+          <td><button type="button" class="removeCand" (click)="removeCandidate(c.name, c.surname)">Rimuovi</button></td>
+          <td class="rank">{{i + 1}}</td>
+          <td class="entry">{{c}}</td>
+          <td class="votes">{{c.votes}}</td>
+          <td><button type="button" class="voteUp" (click)="c.incVotes(); saveCandidates()">+</button></td>
+          <td><button type="button" class="voteDown" (click)="c.decVotes(); saveCandidates()">-</button></td>
+        </tr>
+      </table>
     </div>
     <!--
       TODO: add past election section
