@@ -1,0 +1,87 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "dart:convert",
+        "5": false
+      },
+      {
+        "1": "package:angular2/common.dart",
+        "2": [
+          "CORE_DIRECTIVES",
+          "FORM_DIRECTIVES"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "AppComponent",
+        "7": [
+          {
+            "2": "CORE_DIRECTIVES"
+          },
+          {
+            "2": "FORM_DIRECTIVES"
+          }
+        ]
+      }
+    ],
+    "6": "app_component.dart"
+  },
+  "type": {
+    "Candidate": {
+      "class": "Identifier",
+      "name": "Candidate",
+      "moduleUrl": "asset:ElezioniDirettivo/lib/app_component.dart",
+      "prefix": null,
+      "value": null
+    },
+    "AppComponent": {
+      "class": "Directive",
+      "isComponent": true,
+      "selector": "directiveElection",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "AppComponent",
+        "moduleUrl": "asset:ElezioniDirettivo/lib/app_component.dart",
+        "prefix": null,
+        "isHost": false,
+        "value": null,
+        "diDeps": []
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 0,
+        "template": "<section class=\"container\">\n  <h1>Elezioni Direttivo del CUS di Trento</h1>\n    <div class=\"taskBar\">\n      <div class=\"tsb-row\">\n        <span class=\"input input--kozakura\">\n\t\t\t\t\t<input class=\"input__field input__field--kozakura\" type=\"text\" name=\"name\" id=\"name\" autofocus [(ngModel)]=\"iName\" (focus)=\"checkInputContent($event)\" (blur)=\"checkInputContent($event)\" (keypress)=\"enterAdd($event)\"/>\n\t\t\t\t\t<label class=\"input__label input__label--kozakura\" for=\"name\">\n\t\t\t\t\t\t<span class=\"input__label-content input__label-content--kozakura\" data-content=\"Nome Candidato\">Nome Candidato</span>\n\t\t\t\t\t</label>\n\t\t\t\t\t<svg class=\"graphic graphic--kozakura\" width=\"300%\" height=\"100%\" viewBox=\"0 0 1200 60\" preserveAspectRatio=\"none\">\n\t\t\t\t\t\t<path d=\"M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z\"/>\n\t\t\t\t\t</svg>\n\t\t\t\t</span>\n        <span class=\"input input--kozakura\">\n\t\t\t\t\t<input class=\"input__field input__field--kozakura\" type=\"text\" name=\"surname\" id=\"surname\" [(ngModel)]=\"iSurname\" (focus)=\"checkInputContent($event)\" (blur)=\"checkInputContent($event)\" (keypress)=\"enterAdd($event)\"/>\n\t\t\t\t\t<label class=\"input__label input__label--kozakura\" for=\"surname\">\n\t\t\t\t\t\t<span class=\"input__label-content input__label-content--kozakura\" data-content=\"Cognome Candidato\">Cognome Candidato</span>\n\t\t\t\t\t</label>\n\t\t\t\t\t<svg class=\"graphic graphic--kozakura\" width=\"300%\" height=\"100%\" viewBox=\"0 0 1200 60\" preserveAspectRatio=\"none\">\n\t\t\t\t\t\t<path d=\"M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z\"/>\n\t\t\t\t\t</svg>\n\t\t\t\t</span>\n      </div>\n      <div class=\"tsb-row\">\n        <button type=\"button\" class=\"btn\" (click)=\"addCandidate()\">Aggiungi Candidato</button>\n        <button type=\"button\" class=\"btn\" (click)=\"clearCandidateList()\">Cancella Candidati</button>\n        <button type=\"button\" class=\"btn\" (click)=\"selectElected()\">Eleggi</button>\n      </div>\n    </div>\n    <div>\n      <table id=\"candidatesList\">\n        <tr class=\"header\">\n          <td></td>\n          <td><h2>Rank</h2></td>\n          <td><h2>Candidati</h2></td>\n          <td><h2>Voti</h2></td>\n          <td></td>\n          <td></td>\n        </tr>\n        <tr *ngFor=\"let c of candidates; let i = index\">\n          <td><button type=\"button\" class=\"removeCand\" (click)=\"removeCandidate(c.name, c.surname)\">Rimuovi</button></td>\n          <td class=\"rank\">{{i + 1}}</td>\n          <td class=\"entry\">{{c}}</td>\n          <td class=\"votes\">{{c.votes}}</td>\n          <td><button type=\"button\" class=\"voteUp\" (click)=\"c.incVotes(); saveCandidates()\">+</button></td>\n          <td><button type=\"button\" class=\"voteDown\" (click)=\"c.decVotes(); saveCandidates()\">-</button></td>\n        </tr>\n      </table>\n    </div>\n    <!--\n      TODO: add past election section\n      TODO: add style to application\n      TODO: add animation to show election results\n    -->\n</section>\n",
+        "templateUrl": "asset:ElezioniDirettivo/lib/app_component.html",
+        "styles": [],
+        "styleUrls": [
+          "asset:ElezioniDirettivo/lib/app_component.css"
+        ],
+        "ngContentSelectors": []
+      },
+      "providers": [],
+      "viewProviders": [],
+      "queries": [],
+      "viewQueries": []
+    }
+  },
+  "alias": {}
+}

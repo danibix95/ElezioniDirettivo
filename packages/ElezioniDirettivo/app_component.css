@@ -1,0 +1,311 @@
+:host {
+
+}
+h1 {
+  font-size: 4em;
+  margin-bottom: 0.5em;
+  -webkit-margin-after: 0.2em;
+}
+.rank, .votes {
+  font-size: 2em !important;
+  padding: 0 1.2em;
+}
+.entry {
+  font-size: 3em;
+  text-transform: capitalize;
+  font-weight: 300;
+}
+.taskBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-around;
+}
+.tsb-row {
+  flex-basis: 100%;
+  padding-top: 1.2rem;
+  padding-bottom: 0.3rem;
+}
+
+.input {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin: 1em;
+  max-width: 350px;
+  width: calc(100% - 2em);
+  vertical-align: top;
+}
+
+.input__field {
+  position: relative;
+  display: block;
+  float: right;
+  padding: 0.8em;
+  width: 60%;
+  border: none;
+  border-radius: 0;
+  background: #f0f0f0;
+  color: #aaa;
+  font-weight: 400;
+  -webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+  outline: none;
+}
+
+.input__label {
+  display: inline-block;
+  float: right;
+  padding: 0 1em;
+  width: 40%;
+  color: #696969;
+  font-weight: bold;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.input__label-content {
+  position: relative;
+  display: block;
+  padding: 1.6em 0;
+  width: 100%;
+}
+
+.graphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: none;
+}
+
+.icon {
+  color: #ddd;
+  font-size: 150%;
+}
+
+.input--kozakura {
+  overflow: hidden;
+  padding-bottom: 1em;
+}
+
+.input__field--kozakura {
+  position: relative;
+  margin-top: 1.25em;
+  padding: 0.25em 0.6em;
+  left: 32px;
+  width: 100%;
+  background: transparent;
+  color: #2F3238;
+  font-size: 1.55em;
+  opacity: 0;
+}
+
+.input__label--kozakura {
+  width: 100%;
+  text-align: left;
+  position: absolute;
+  /*top: 1em;*/
+  pointer-events: none;
+  overflow: hidden;
+  padding: 0 0.25em;
+  -webkit-transform: translate3d(1em, 2.5em, 0);
+  transform: translate3d(1em, 2.5em, 0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.input__label-content--kozakura {
+  color: #A4A5A6;
+  padding: 0.4em 0 0.25em;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.input__label-content--kozakura::after {
+  content: attr(data-content);
+  position: absolute;
+  font-weight: 800;
+  top: 90%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  color: #fafafa;
+  padding: 0.25em 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+}
+
+.graphic--kozakura {
+  fill: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  top: 1em;
+  bottom: 0px;
+  height: 4.5em;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.7s, fill 0.7s;
+  transition: transform 0.7s, fill 0.7s;
+  -webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+  transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+}
+
+.input__field--kozakura:focus,
+.input--filled .input__field--kozakura {
+  -webkit-transition: opacity 0s 0.35s;
+  transition: opacity 0s 0.35s;
+  opacity: 1;
+}
+
+.input__field--kozakura:focus + .input__label--kozakura,
+.input--filled .input__label--kozakura {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.input__field--kozakura:focus + .input__label--kozakura .input__label-content--kozakura,
+.input--filled .input__label-content--kozakura {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}
+
+.input__field--kozakura:focus ~ .graphic--kozakura,
+.input--filled .graphic--kozakura {
+  fill: #fff;
+  -webkit-transform: translate3d(-66.6%, 0, 0);
+  transform: translate3d(-66.6%, 0, 0);
+}
+/* -------------------------------------- */
+
+.btn {
+  margin: 0.2rem 0.5rem;
+  padding: 0.8rem;
+  min-width: 232px;
+  color: #2196F3;
+  background-color: transparent;
+  border: 1px solid #2196F3;
+  font-size: 1.2rem;
+  cursor: pointer;
+  /*border-radius: 4px;*/
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn:hover,
+.btn:focus {
+  color: #3E2723;
+  background-color: #2196F3;
+}
+.btn:active {
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  -ms-transition: all 0s;
+  -o-transition: all 0s;
+  transition: all 0s;
+  border-color: #1565C0;
+  background-color: #1565C0;
+  box-shadow: 0 0 21px -4px #000000;
+}
+#candidatesList {
+  list-style: none;
+  padding-bottom: 1.5em;
+  margin: 0 auto;
+}
+.container {
+  text-align: center;
+}
+.removeCand {
+  margin: 0.2rem 0.5rem;
+  padding: 0.8rem;
+  min-width: 128px;
+  color: cornsilk;
+  background-color: transparent;
+  border: 1px solid cornsilk;
+  font-size: 1.2rem;
+  cursor: pointer;
+  /*border-radius: 4px;*/
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.removeCand:hover,
+.removeCand:focus {
+  color: #3E2723;
+  background-color: cornsilk;
+}
+.removeCand:active {
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  -ms-transition: all 0s;
+  -o-transition: all 0s;
+  transition: all 0s;
+  border-color: bisque;
+  background-color: bisque;
+  box-shadow: 0 0 21px -4px #000000;
+}
+
+.voteUp,
+.voteDown {
+  margin: 0.2rem 0.5rem;
+  padding: 0.8rem;
+  min-width: 64px;
+  background-color: transparent;
+  font-size: 1.8rem;
+  cursor: pointer;
+  /*border-radius: 4px;*/
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.voteUp {
+  color: palegreen;
+  border: 1px solid palegreen;
+}
+.voteDown {
+  color: orangered;
+  border: 1px solid orangered;
+}
+.voteUp:hover, .voteUp:focus {
+  color: #3E2723;
+  background-color: palegreen;
+}
+.voteDown:hover, .voteDown:focus {
+  color: #3E2723;
+  background-color: orangered;
+}
+.voteUp:active, .voteDown:active {
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  -ms-transition: all 0s;
+  -o-transition: all 0s;
+  transition: all 0s;
+}
+.voteUp:active {
+  border-color: limegreen;
+  background-color: limegreen;
+  box-shadow: 0 0 21px -4px #000000;
+}
+.voteDown:active {
+  border-color: red;
+  background-color: red;
+  box-shadow: 0 0 21px -4px #000000;
+}
+
